@@ -1,10 +1,9 @@
 class BusinessesController < ApplicationController
-   before_action  only: [:show, :update, :destroy]
+  before_action  only: [:index, :show, :destroy]
 
   # GET /businesses
   def index
     @businesses = Business.all
-
     render json: @businesses
   end
 
@@ -46,6 +45,6 @@ class BusinessesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def business_params
-      params.require(:business).permit(:name, :image_url, :location, :category_id)
+      params.permit(:name, :image_url, :location, :category_id)
     end
 end

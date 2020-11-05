@@ -5,15 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.destroy_all
-Category.destroy_all
+
 Review.destroy_all
 Business.destroy_all
+Category.destroy_all
+User.destroy_all
 
-User.reset_pk_sequence
-Category.reset_pk_sequence
 Review.reset_pk_sequence
 Business.reset_pk_sequence
+Category.reset_pk_sequence
+User.reset_pk_sequence
+
 
 
 
@@ -81,61 +83,61 @@ businesses_array =
         category_id: 2
     },
     
-    # {
-    #     name: "Cuddles and Tails Pet Services",
-    #     image_url: "https://img.icons8.com/bubbles/100/000000/animal-shelter.png",
-    #     location: "New York City",
-    #     category_id: 3
-    # },
+    {
+        name: "Cuddles and Tails Pet Services",
+        image_url: "https://img.icons8.com/bubbles/100/000000/animal-shelter.png",
+        location: "New York City",
+        category_id: 3
+    },
 
-    # {
-    #     name: "Hudson's Hounds NYC",
-    #     image_url: "https://img.icons8.com/color/100/000000/dog-park.png",
-    #     location: "New York City",
-    #     category_id: 4
-    # },
+    {
+        name: "Hudson's Hounds NYC",
+        image_url: "https://img.icons8.com/color/100/000000/dog-park.png",
+        location: "New York City",
+        category_id: 4
+    },
 
-    # {
-    #     name: "Jordon's Pet Care",
-    #     image_url: "https://img.icons8.com/pastel-glyph/100/000000/pet-bone.png",
-    #     location: "New York City",
-    #     category_id: 1
-    # },
+    {
+        name: "Jordon's Pet Care",
+        image_url: "https://img.icons8.com/pastel-glyph/100/000000/pet-bone.png",
+        location: "New York City",
+        category_id: 1
+    },
     
-    # {
-    #     name: "Mobile Mutts Dog Walking and Cat Sitting",
-    #     image_url: "https://img.icons8.com/material-rounded/100/000000/animal-shelter.png",
-    #     location: "New York City",
-    #     category_id: 2
-    # },
+    {
+        name: "Mobile Mutts Dog Walking and Cat Sitting",
+        image_url: "https://img.icons8.com/material-rounded/100/000000/animal-shelter.png",
+        location: "New York City",
+        category_id: 2
+    },
 
-    # {
-    #     name: "Never Alone Pets",
-    #     image_url: "https://img.icons8.com/fluent/100/000000/hamster.png",
-    #     location: "New York City",
-    #     category_id: 3
-    # },
+    {
+        name: "Never Alone Pets",
+        image_url: "https://img.icons8.com/fluent/100/000000/hamster.png",
+        location: "New York City",
+        category_id: 3
+    },
 
-    # {
-    #     name: "Paws on Pine",
-    #     image_url: "https://img.icons8.com/fluent/100/000000/dog-collar.png",
-    #     location: "New York City",
-    #     category_id: 4
-    # },
+    {
+        name: "Paws on Pine",
+        image_url: "https://img.icons8.com/fluent/100/000000/dog-collar.png",
+        location: "New York City",
+        category_id: 4
+    },
     
-    # {
-    #     name: "Pet Sitting Pod",
-    #     image_url: "https://img.icons8.com/officel/100/000000/parrot.png",
-    #     location: "New York City",
-    #     category_id: 1
-    # },
+    {
+        name: "Pet Sitting Pod",
+        image_url: "https://img.icons8.com/officel/100/000000/parrot.png",
+        location: "New York City",
+        category_id: 1
+    },
 
-    # {
-    #     name: "Wendy's Pet Care",
-    #     image_url: "https://img.icons8.com/fluent/100/000000/cat.png",
-    #     location: "New York City",
-    #     category_id: 2
-    # }
+    {
+        name: "Wendy's Pet Care",
+        image_url: "https://img.icons8.com/fluent/100/000000/cat.png",
+        location: "New York City",
+        category_id: 2
+    }
 ]
 
 
@@ -155,39 +157,44 @@ end
 
 ########################################## Seeds for REVIEWS ################################
 
-reviews = Review.create!([
-
-    {
+tr = Review.create!(
         title: "Great All Around Service",
         description: "customer service is only eclipsed by the outstanding care",
         score: 5,
-        business_id: Business.fifth
-    },
-    {
-        title: "Excellent Service",
+        business_id: 2,
+        user_id: 1)
+    
+
+    
+jr = Review.create!( 
+         title: "Excellent Service",
         description: "Anytime I need them, they are there for me!",
-        score: 5,
-        business_id: Business.second
-    },
-    {
-        title: "Great Support",
-        description: "Pudding's care giver is so attentive and gentle.",
-        score: 5,
-        business_id: Business.third
-    },
-    {
-        title: "Happy Camper",
-        description: "Charlie and I couldn't be happier with the care received!",
-        score: 5,
-        business_id: Business.fourth
-    },
-    {
-        title: "Good Service",
-        description: "Service is great, price a bit to high.",
-        score: 3,
-        business_id: Business.first
-    }
-])
+        score: 4,
+        business_id: 3,
+        user_id: 2)
+    
+    # {
+    #     title: "Great Support",
+    #     description: "Pudding's care giver is so attentive and gentle.",
+    #     score: 5,
+    #     business_id: 2,
+    #     user_id: 1
+    # },
+    # {
+    #     title: "Happy Camper",
+    #     description: "Charlie and I couldn't be happier with the care received!",
+    #     score: 5,
+    #     business_id: 3,
+    #     user_id: 2
+    # },
+    # {
+    #     title: "Good Service",
+    #     description: "Service is great, price a bit to high.",
+    #     score: 3,
+    #     business_id: 4,
+    #     user_id: 1
+    # }
+
 
 # Review.create(reviews)
 # puts "hello"

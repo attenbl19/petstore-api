@@ -1,6 +1,6 @@
 class Review < ApplicationRecord
-  belongs_to :businesses
-  belongs_to :users
+  belongs_to :business
+  belongs_to :user
 
 def avg_score
   reviews.average(:score).round(2).to_f

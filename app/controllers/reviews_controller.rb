@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :authorized, only: [:create, :update, :destroy]
+  before_action :authorized, only: [:index, :create, :update, :destroy]
 
   # GET /reviews
   def index
@@ -9,9 +9,9 @@ class ReviewsController < ApplicationController
   end
 
   # # GET /reviews/1
-  # def show
-  #   render json: @review
-  # end
+  def show
+    render json: @review
+  end
 
   # POST /reviews
   def create
@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
   private
     # Only allow a trusted parameter "white list" through.
     def review_params
-      params.permit(:title, :description, :score, :businesses_id, :users_id)
+      params.permit(:title, :description, :score, :business_id, :user_id)
     end
 end
 
